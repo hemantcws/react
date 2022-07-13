@@ -1,0 +1,73 @@
+svg.bi.bi-gift {
+    height: 20px;
+    margin-top: -4px;
+}
+
+.slick-slide img {
+    margin: auto;
+    width: 90%;
+}
+.link-red {
+    color: red;
+}
+.foot-menu a {
+    margin-left: 8px;
+    text-decoration: none;
+}
+.banner {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+img.home-banner {
+    width: 100%;
+    height: auto;
+}
+
+img.list-img {
+    height: auto;
+    width: 100%;
+}
+.restinfo span {
+    display: block;
+    text-align: left;
+}
+.restcuisines {
+    text-align: left;
+}
+.reststats {
+    text-align: left;
+}
+span.cat-list {
+    color: #FF9170;
+    margin: 0 5px;
+    display: inline-block;
+    font-style: italic;
+    cursor: pointer;
+    font-weight: 500;
+}
+.main_list_div {
+    margin-bottom: 20px;
+}
+.main_list_div .restinfo{
+    border: 1px solid #666;
+    padding: 8px 5px;
+	height: 100%;
+}
+
+/*     only for desktop      */
+
+@media screen and (min-width: 768px) {
+.slick-slide img {
+   min-height: 204px;
+   margin-top: 10px;
+}
+.top-menu {
+    font-size: 20px;
+}
+.foot-menu {
+    font-size: 20px;
+    padding: 30px 0px;
+}
+
+}
