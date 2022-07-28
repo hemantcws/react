@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="App">
+    <div className="App home">
 		<div className="container">
 			<div className="banner">
 				<Link to="#">
