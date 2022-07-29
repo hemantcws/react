@@ -1,5 +1,7 @@
+import {useState,useEffect} from "react";
 import React from "react";
 import data from "../components/data.js";
+import data2 from "../components/data2.js";
 import { Link } from "react-router-dom";
 
 const Single = () => {
@@ -7,6 +9,14 @@ const Single = () => {
     const id = queryParams.get('id');
     const itemdata = data.filter(item => item["Id"] == id );
 	const rest = itemdata[0];
+	const [itemsToDisplay, setItemsToDisplay] = useState([]);
+		useEffect(() =>{
+	        var ItemsToDisplay = [];
+		    for (var i = 0; i < data2.length; i++) {
+		    	ItemsToDisplay.push(data2[i]);
+	     	}
+			setItemsToDisplay( ItemsToDisplay );
+		},[]);
 
 	return (
 
@@ -69,63 +79,19 @@ const Single = () => {
 					<div className="container"> 
 						<div className="row">
 							<h1 className="ex_text">Experiences</h1>
+								{itemsToDisplay.map(rest => {
+						return (
 							<div className="col-md-4">
 								<div className="card">
-									<img src="http://cloudwebsolutions.net:3000/static/media/gift2.299dc2f29ad4c1ff4495.png" class="card-img-top" alt="..."/>
+									<img src={rest["Image"]}  class="card-img-top" alt="..."/>
 									<div className="card-body">
-										<h5 className="card-title">Lorem Ipsum</h5>
-										<p className="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
-                                   
+										<h5 className="card-title">	{rest["Name"]}</h5>
+										<p className="card-text">{rest["Description"].substring(0,90)}...</p>
 									</div>
 								</div>
 							</div>
-							<div className="col-md-4">
-								<div className="card">
-									<img src="http://cloudwebsolutions.net:3000/static/media/gift2.299dc2f29ad4c1ff4495.png" class="card-img-top" alt="..."/>
-									<div className="card-body">
-										<h5 className="card-title">Lorem Ipsum</h5>
-										<p className="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
-									</div>
-								</div>
-							</div>
-							<div className="col-md-4">
-								<div className="card">
-									<img src="http://cloudwebsolutions.net:3000/static/media/gift2.299dc2f29ad4c1ff4495.png" class="card-img-top" alt="..."/>
-									<div className="card-body">
-										<h5 className="card-title">Lorem Ipsum</h5>
-										<p className="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="row dessert_2">
-							<div className="col-md-4">
-								<div className="card">
-									<img src="http://cloudwebsolutions.net:3000/static/media/gift2.299dc2f29ad4c1ff4495.png" class="card-img-top" alt="..."/>
-									<div className="card-body">
-										<h5 className="card-title">Lorem Ipsum</h5>
-										<p className="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
-									</div>
-								</div>
-							</div>
-							<div className="col-md-4">
-								<div className="card">
-									<img src="http://cloudwebsolutions.net:3000/static/media/gift2.299dc2f29ad4c1ff4495.png" class="card-img-top" alt="..."/>
-									<div className="card-body">
-										<h5 className="card-title">Lorem Ipsum</h5>
-										<p className="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
-									</div>
-								</div>
-							</div>
-							<div className="col-md-4">
-								<div className="card">
-									<img src="http://cloudwebsolutions.net:3000/static/media/gift2.299dc2f29ad4c1ff4495.png" class="card-img-top" alt="..."/>
-									<div className="card-body">
-										<h5 className="card-title">Lorem Ipsum</h5>
-										<p className="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
-									</div>
-								</div>
-							</div>
+						);
+							})}
 						</div>
 					</div>
 				</section>

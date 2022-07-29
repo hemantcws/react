@@ -23,6 +23,7 @@ const Gifts = () => {
 		var ItemsToDisplay = [];
 		for (var i = 0; i < data.length; i++) {
 			ItemsToDisplay.push(data[i]);
+		
 			data[i]["Categories"].substring(1, data[i]["Categories"].length - 2).split(",")
 			.forEach(cuisine => {
 				let c = cuisine.substring(1, cuisine.length - 1);
@@ -187,7 +188,7 @@ return (
 					</select>
 				</div>
 				<div className="filter-item">
-					<div className="filter-lable">Participent</div>
+					<div className="filter-lable">Participants</div>
 					<span className="participent-opt" data="1" onClick={optionSelectedparrd}><img src={vik1} /> 1 person</span>
 					<span className="participent-opt" data="2" onClick={optionSelectedparrd}><img src={vik2} /> 2 people</span>
 					<span className="participent-opt" data="4" onClick={optionSelectedparrd}><img src={vik3} /> +2 people</span>
